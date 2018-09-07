@@ -1,0 +1,17 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+    <form id="enter">
+        <a>Login</a>
+        <br>
+        <input type="text" name="login">
+        <br>
+        <a>Password</a>
+        <br>
+        <input type="password" name="password">
+        <br>
+        <input type="button" onclick="enter()" value="OK">
+    </form>
+
+    <div id="result"></div>
+{% endblock %}

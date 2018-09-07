@@ -1,0 +1,55 @@
+{% extends "index.html.twig" %}
+{% block title %} {% endblock %}
+
+{% block content %}
+   <div class="container">
+       <div class="row">
+           <table class="table table-striped">
+               <tr class="row">
+                   <td class="col-1">Title</td>
+                   <td class="col-1">Index</td>
+                   <td class="col-3">Address</td>
+                   <td class="col-2">Amount</td>
+                   <td class="col-2">Price</td>
+                   <td class="col-2">Sum</td>
+                   <td class="col-1" id="del">atc</td>
+               </tr>
+               {% for item in data %}
+                   <tr class="row" id="row_{{ item.post_id }}">
+                       <td class="col-1">{{ item.title }}</td>
+                       <td class="col-1">{{ item.index }}</td>
+                       <td class="col-3" style="font-size: 12px;">
+                           <textarea style="resize: none" cols="42" rows="1">{{ item.address }}</textarea>
+                       </td>
+                       <td class="col-2">
+                           {% if item.amount == null %}
+                               <a style="color: brown">waiting update...</a>
+                           {% else %}
+                               {{ item.amount }} {{ item.index }}
+                           {% endif %}
+                       </td>
+                       <td class="col-2">{{ item.price }} $</td>
+                       <td class="col-2">{{ (item.amount * item.price) | round(2)}} $</td>
+                       <td class="col-1" onclick="del_post({{ item.post_id }})" style="cursor: pointer">del</td>
+                   </tr>
+               {% endfor %}
+               <tr class="row">
+                   <td class=col-1"></td>
+                   <td class="col-1"></td>
+                   <td class="col-3"></td>
+                   <td class="col-2"></td>
+                   <td class="col-2"></td>
+                   <td class="col-3" id="total">{{ total }} $</td>
+               </tr>
+           </table>
+       </div>
+   </div>
+
+    {#<div class="container">#}
+        {#<div class="row">#}
+            {#<div class="block_post">#}
+                {#<div style="height: 30px; width: 300px; background: silver" class="post"></div>#}
+                {#<div style="height: 30px; width: 300px; background: darkslategrey; position: relative; display: block" class="detale"></div>#}
+            {#</div>#}
+    {#</div>#}
+{% endblock %}

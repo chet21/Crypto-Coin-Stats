@@ -1,0 +1,33 @@
+.menuItemsOn {
+    height: auto;
+    width: auto;
+    padding: 3px 15px 5px 15px;
+    background: #E6E8EB;
+    display: inline;
+    font-size: 20px;
+    border-right: 1px solid #DADADA;
+    border-top: 1px solid #DADADA;
+    border-left: 1px solid #DADADA;
+    border-radius: 4px 4px 0 0;
+    cursor: default;
+}
+
+.menuItemsOff {
+    display: inline;
+    height: auto;
+    width: auto;
+    padding: 3px 15px 5px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.imgN:hover {
+     background-size: 50px;
+}
+
+.open_one_block{
+    display: block;
+    height: 100px;
+    width: 100px;
+}
+

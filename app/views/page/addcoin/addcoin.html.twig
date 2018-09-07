@@ -1,0 +1,33 @@
+{% extends "index.html.twig" %}
+{% block content %}
+    <form action="addcoin/add" method="post" id="c">
+        <a>Tile</a>
+        <br>
+        <select id="coin_select">
+            <option value="0" selected>Pleas select coin...</option>   ///  onclick="get_coin_info()"
+            {% for coin in coins %}
+                <option value="{{ coin.id }}">{{ coin.title }}</option>   ///  onclick="get_coin_info()"
+            {% endfor %}
+        </select>
+        <input type="number" name="id_coin" hidden>
+        <br>
+        <a>Index</a>
+        <br>
+        <input type="text" name="index" value="Pleas select coin..." readonly style="background: silver">
+        <br>
+        <a>Note</a>
+        <br>
+        <input type="text" name="note">
+        <br>
+        <a>Price</a>
+        <br>
+        <input type="text" name="price" value="Pleas select coin..." style="background: silver">
+        <br>
+        <a>Address</a>
+        <br>
+        <input type="text" name="address" value="">
+        <div class="err_address"></div>
+        <br>
+        <input type="button" name="submit" onclick="add_coin()">
+    </form>
+{% endblock %}
